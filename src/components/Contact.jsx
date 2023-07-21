@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
+//import emailjs from "@emailjs/browser";
 
 import useFetchData from "../hooks/use-fetch-data";
 
@@ -9,9 +9,11 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
-const Contact = () => {
+const Contact = ({ onShowModal }) => {
   const { isLoading, error, fetchRequest } = useFetchData();
   const formRef = useRef();
+
+  console.log(onShowModal);
 
   const [form, setForm] = useState({
     name: "",
@@ -27,16 +29,14 @@ const Contact = () => {
   };
 
   const handleContactUpload = async (data) => {
-    await fetchRequest(
-      {
-        url: "https://react-http-test-4c28f-default-rtdb.asia-southeast1.firebasedatabase.app/contacts.json",
-        method: "POST",
-        body: { data },
-        headers: {
-          "Content-Type": "application/json",
-        },
-      } //createTask.bind(null, taskText)
-    );
+    await fetchRequest({
+      url: "https://react-http-test-4c28f-default-rtdb.asia-southeast1.firebasedatabase.app/contacts.json",
+      method: "POST",
+      body: { data },
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     console.log(error);
   };
@@ -45,7 +45,14 @@ const Contact = () => {
     e.preventDefault();
 
     handleContactUpload(form);
+    setForm({ name: "", email: "", message: "" });
+    props.onShowModal();
   };
+
+  /* const showModalHandler = () => {
+    console.log("made it here");
+    props.onShowModal();
+  }; */
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
@@ -107,6 +114,13 @@ const Contact = () => {
       >
         <EarthCanvas />
       </motion.div>
+      <button
+        type="button"
+        className="bg-tertiary py-3 px-8 outline-none w-fit font-bold shadow-md shadow-primary rounded-xl"
+        onClick={onShowModal}
+      >
+        Test Modal
+      </button>
     </div>
   );
 };
