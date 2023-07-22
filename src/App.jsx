@@ -26,7 +26,19 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      {showModal && <Modal />}
+      {showModal && (
+        <Modal onClose={hideModalHandler}>
+          <div className="bg-tertiary py-3 px-8 outline-none w-fit font-bold shadow-md shadow-primary rounded-xl z-40">
+            <div
+              onClick={hideModalHandler}
+              className="relative -top-5 -left-9 ml-auto inline-flex text-2xl cursor-pointer"
+            >
+              X
+            </div>
+            Thank you for your message! I will get back to you soon!
+          </div>
+        </Modal>
+      )}
 
       <div className="relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">

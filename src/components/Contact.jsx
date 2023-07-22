@@ -13,15 +13,11 @@ const Contact = ({ onShowModal }) => {
   const { isLoading, error, fetchRequest } = useFetchData();
   const formRef = useRef();
 
-  console.log(onShowModal);
-
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
-
-  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,14 +41,10 @@ const Contact = ({ onShowModal }) => {
     e.preventDefault();
 
     handleContactUpload(form);
-    setForm({ name: "", email: "", message: "" });
-    props.onShowModal();
-  };
 
-  /* const showModalHandler = () => {
-    console.log("made it here");
-    props.onShowModal();
-  }; */
+    setForm({ name: "", email: "", message: "" });
+    onShowModal();
+  };
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
@@ -114,13 +106,6 @@ const Contact = ({ onShowModal }) => {
       >
         <EarthCanvas />
       </motion.div>
-      <button
-        type="button"
-        className="bg-tertiary py-3 px-8 outline-none w-fit font-bold shadow-md shadow-primary rounded-xl"
-        onClick={onShowModal}
-      >
-        Test Modal
-      </button>
     </div>
   );
 };
