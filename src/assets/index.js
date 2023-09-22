@@ -36,6 +36,7 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import nft from "./nft-coming-soon.png";
+import tradingWebsiteLogo from "./website-logo.png";
 
 import userImage from "./users/userImage.svg";
 
@@ -76,4 +77,5 @@ export {
   tripguide,
   userImage,
   nft,
+  tradingWebsiteLogo,
 };

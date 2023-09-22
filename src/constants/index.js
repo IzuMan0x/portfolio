@@ -31,6 +31,7 @@ import {
   freelancer,
   userImage,
   nft,
+  tradingWebsiteLogo,
 } from "../assets";
 
 export const navLinks = [
@@ -155,7 +156,7 @@ const experiences = [
     date: "Jan 2023 - Current",
     points: [
       "Setup a Fiverr, Upwork and Coconala account in search of freelance work.",
-      "Wrote, tested, and deployed smart contracts using solidity and hardhat",
+      "Wrote, tested, and deployed smart contracts using solidity, hardhat, and foundry",
       "Built frontend applications for interacting with smart contracts",
     ],
   },
@@ -201,6 +202,41 @@ const projects = [
     ],
     image: nft,
     source_code_link: "https://github.com/",
+  },
+  {
+    name: "Decentralized Leveraged Trading",
+    description:
+      "A leveraged trading smart contract that allows user to open leveraged trades, all in a decentralized way.",
+    tags: [
+      {
+        name: "NextJs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "solidity",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Foundry",
+        color:
+          "text-transparent bg-clip-text bg-gradient-to-r from-[#ffff00] to-cyan-500",
+      },
+      {
+        name: "viem",
+        color: "text-blue-gradient",
+      },
+      {
+        name: "Wagmi",
+        color: "green-text-gradient",
+      },
+    ],
+    image: tradingWebsiteLogo,
+    source_code_link:
+      "https://decentralized-leveraged-trading-frontend-2g1hxt05x-izuman0x.vercel.app/",
   },
   /* {
     name: "Job IT",
