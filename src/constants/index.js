@@ -235,8 +235,7 @@ const projects = [
       },
     ],
     image: tradingWebsiteLogo,
-    source_code_link:
-      "https://decentralized-leveraged-trading-frontend-2g1hxt05x-izuman0x.vercel.app/",
+    source_code_link: "https://bettertrade.me/",
   },
   /* {
     name: "Job IT",
